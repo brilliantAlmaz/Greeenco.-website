@@ -1,0 +1,316 @@
+@import "nullstyle.scss";
+@import url('https://fonts.googleapis.com/css2?family=Akronim&family=Koulen&family=Mukta+Vaani&family=Roboto&family=Work+Sans&display=swap');
+
+html{
+	overflow-x:hidden;
+}
+
+.wrapper {
+	display: flex;
+	flex-direction:column;
+	min-height:100%;
+}
+.container{
+	max-width:1230px;
+	margin: 0 auto;
+}
+.header {
+	flex: 0 0 auto;
+	background: #F4F4F4;
+	padding: 72px 0 0 0;
+	height:250px;
+}
+.header__body {
+	display: flex;
+	justify-content:space-between;
+	align-items:center;
+}
+.header__burger {
+	width:40px;
+	height:40px;
+	background: #000;
+}
+.header__menu {
+	display: none;
+}
+.header__list {
+	li{
+		margin: 10px 0 0 0;
+	}
+}
+.header__link {
+	color:#979797;
+	font-family: 'Roboto';
+	letter-spacing: 1px;
+	font-size: 48px;
+	text-transform:uppercase;
+}
+.header__home {
+	width:52px;
+	height:39px;
+	img{
+		width:52px;
+		height:39px;
+		object-fit:none;
+	}
+}
+.content {
+	flex: 1 0 auto;
+}
+//main
+.main {
+	height:806px;
+	background: #f4f4f4;
+	.container{
+		position: relative;
+	}
+
+}
+.main__image {
+	position: absolute;
+	top:0;
+	left:500px;
+	img{
+		object-fit:none;
+	}
+	z-index:2;
+}
+.main__logo {
+	position: absolute;
+	top:240px;
+	left:0;
+}
+.main__title {
+	position: absolute;
+	font-family: 'Akronim';
+	font-weight: 400;
+	font-size: 48px;
+	line-height: 55px;
+	color: #7A797A;
+}
+
+//sliderblock
+.sliderblock {
+	background: #fff;
+	position: relative;
+	top:0;
+	left:0;
+	height:929px + 140px;
+}
+.container {}
+.sliderblock__slider {
+	display: flex;
+	justify-content:space-between;
+}
+.slider {
+	padding: 140px 0 0 0;
+	width:100%;
+	overflow: hidden;
+}
+.sliderblock__slider-line {
+	display: flex;
+	transition: all 0.7s ease 0s;
+	//justify-content:flex-start;
+}
+.slider-line {}
+.sliderblock__list {
+	
+}
+.sliderblock__item {
+	position: relative;
+	.container{
+
+		display: flex;
+		justify-content:space-between;
+		//gap:100px;
+	}
+}
+.sliderblock__item-image {
+	img{
+		width:640px;
+		height:929px;
+		object-fit:cover;
+		aspect-ration: 640/929;
+	}
+}
+.sliderblock__item-textblock {
+	margin:31px 0 0 0;
+	max-width:434px;
+}
+.sliderblock__item-title {
+	font-family: 'Work Sans';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 81px;
+	line-height: 100px;
+	letter-spacing: 18.9844px;
+	color: #FFFFFF;
+}
+.sliderblock__item-subtitle {
+	margin:31px 0 0 0;
+	font-family: 'Mukta Vaani';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 24px;
+	line-height: 35px;
+	text-align: justify;
+	color: #FFFFFF;
+}
+.sliderblock__item-time {
+	margin: 30px 0 0 0;
+	position: relative;
+	display: block;
+	height:3px;
+	width:100%;
+	background: rgba(#fff,0.6)
+}
+.sliderblock__bg{
+	position: absolute;
+	top:0;
+	height:790px;
+	width:100%;
+	background: #4a4a4a;
+}
+.sliderblock__item-time-passed {
+	//transition:all 7.5s ease 0s;
+	position: absolute;
+	top:-2px;
+	left:0;
+	display: block;
+	height:7px;
+	width:0;
+	background: #fff;
+}
+.sliderblock__gallery-link {
+	width:431px;
+	border:3px solid #979797;
+	padding:15px 47px;
+	font-family: 'Koulen';
+	font-weight: 400;
+	font-size: 36px;
+	line-height: 65px;
+	letter-spacing: 8px;
+	text-align:center;
+	color: #7A797A;
+
+}
+.sliderblock__next-arrow {
+	//z-index:50;
+	transition: all 0.3s ease 0s;
+	cursor:pointer;
+	position: relative;
+	top:200px;
+	right:0px;
+	height:100px;
+	width:50px;
+	
+	&:before,&:after{
+		content:'';
+		position: absolute;
+		display: block;
+		background: #fff;
+		height:5px;
+		width:50px;
+		right:0;
+	}
+	&:before{
+		transform:rotate(45deg);
+		top:31px;
+	}
+	&:after{
+		transform:rotate(-45deg);
+		bottom:31px;
+	}
+}
+.sliderblock__gallery-btn{
+	transition: all 0.3s ease 0s;
+	position: absolute;
+	bottom:60px;
+	height:91px;
+	font-family: "Koulen";
+	font-weight: 400;
+	font-size: 36px;
+	line-height: 91px;
+	letter-spacing: 8px;
+	display: block;
+	border:3px solid #979797;
+	padding:0px 47px;
+	color:#979797;
+	text-align:center;
+	&:hover{
+		color:#000;
+		border-color: #000;
+	}
+}
+.sliderblock__media{
+	position: absolute;
+	top:50%;
+	left:42px;
+	li{
+		margin:21px 0 0 0;
+	}
+	li:first-child{
+		margin:0;
+	}
+}
+.slidernlock__media-item{
+	display: block;
+	img{
+		transition: all 0.3s ease 0s;
+		object-fit:none;
+		&:hover{
+			filter:invert(1)
+		}
+	}
+}
+
+.vasesPots {
+	.container{
+		max-width:1020px;
+	}
+}
+.vasesPots__slider{
+	overflow:hidden;
+}
+.container {}
+.vasesPots__row {
+	display: flex;
+	gap:20px;
+}
+.vasesPots__title {
+	text-orientation: upright;
+	writing-mode: vertical-rl;
+	text-transform:uppercase;
+	font-family: 'Roboto';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 48px;
+	line-height: 115.3%;
+	letter-spacing: 10.6667px;
+	color: #7A797A;
+}
+.vasesPots__item__text {
+	font-family: 'Mukta Vaani';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 24px;
+	line-height: 35px;
+	text-align: center;
+	color: #4A4A4A;
+	margin: 0 auto;
+}
+.vasesPots__item-image {
+	img{
+		object-fit:none;
+	}
+}
+.vasesPots__list{
+	display: flex;
+	gap:10px;
+}
+
+
+//footer
+.footer {
+	flex: 0 0 auto;
+}
