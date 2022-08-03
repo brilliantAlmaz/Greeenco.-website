@@ -4,7 +4,9 @@
 html{
 	overflow-x:hidden;
 }
-
+body.lock{
+	overflow:hidden;
+}
 .wrapper {
 	display: flex;
 	flex-direction:column;
@@ -15,37 +17,108 @@ html{
 	margin: 0 auto;
 }
 .header {
+	position: fixed;
+	top:0;
+	left:0;
+	width:100%;
 	flex: 0 0 auto;
-	background: #F4F4F4;
-	padding: 72px 0 0 0;
-	height:250px;
+	background: rgba(#F4F4F4,0.7);
+	padding: 65px 0 0 0;
+	height:150px;
+	z-index:50;
 }
 .header__body {
 	display: flex;
 	justify-content:space-between;
 	align-items:center;
+	position: relative;
 }
 .header__burger {
-	width:40px;
+	cursor:pointer;
+	transition: all 0.3s ease 0s;
+	position: relative;
+	top:0;
+	right:20px;
+	width:38px;
 	height:40px;
-	background: #000;
+	z-index:50;
+	.burger__item{
+		margin: 6.5px 0 0 0;
+		display: flex;
+		justify-content:space-between;
+		//height:100%;
+	}
+	.burger__item:first-child{
+		margin:0;
+	}
+	span{
+		display: block;
+		width:9px;
+		height:9px;
+		border-radius: 50%;
+		background: #000;
+	}
+	&.active{
+		position: fixed;
+		top:100px;
+		left:40%;
+		span{
+			display: none;
+		}
+		&:before,&:after{
+			content:'';
+			position: absolute;
+			top:0;
+			background: #000;
+			width:4px;
+			height:100%;
+			border-radius: 9px;
+		}
+		&:before{
+			left:16.5px;
+			transform: rotate(45deg);
+		}
+		&:after{
+			left:16.5px;
+			transform: rotate(-45deg);
+		}
+	}
 }
 .header__menu {
-	display: none;
+	transition: all 0.3s ease 0s;
+	position: fixed;
+	top:0;
+	left:-100%;
+	width:45%;
+	height:100%;
+	background: #F0F0F0;
+	z-index:3;
+	&.active{
+		left:0;
+	}
 }
 .header__list {
+	padding:120px 0 0 0;
 	li{
-		margin: 10px 0 0 0;
+		margin: 20px  0 0 120px;
+		//text-align:right;
 	}
 }
 .header__link {
+	transition: all 0.1s ease 0s;
 	color:#979797;
 	font-family: 'Roboto';
 	letter-spacing: 1px;
 	font-size: 48px;
 	text-transform:uppercase;
+	&:hover{
+		color:#000;
+	}
 }
 .header__home {
+	position: absolute;
+	top:0;
+	right:0;
 	width:52px;
 	height:39px;
 	img{
@@ -55,6 +128,7 @@ html{
 	}
 }
 .content {
+	//padding:150px 0 0 0;
 	flex: 1 0 auto;
 }
 //main
@@ -69,8 +143,9 @@ html{
 .main__image {
 	position: absolute;
 	top:0;
-	left:500px;
+	right:0;
 	img{
+
 		object-fit:none;
 	}
 	z-index:2;
@@ -79,6 +154,10 @@ html{
 	position: absolute;
 	top:240px;
 	left:0;
+	img{
+		width:80vw;
+		object-fit:cover;
+	}
 }
 .main__title {
 	position: absolute;
@@ -118,10 +197,12 @@ html{
 }
 .sliderblock__item {
 	position: relative;
-	.container{
-
-		display: flex;
-		justify-content:space-between;
+	display: flex;
+	justify-content:space-between;
+		//gap:100px;
+		.container{
+			display: flex;
+			justify-content:space-between;
 		//gap:100px;
 	}
 }
@@ -130,7 +211,7 @@ html{
 		width:640px;
 		height:929px;
 		object-fit:cover;
-		aspect-ration: 640/929;
+		//aspect-ratio: 640/929;
 	}
 }
 .sliderblock__item-textblock {
@@ -265,6 +346,8 @@ html{
 }
 
 .vasesPots {
+	padding: 230px 0 0 0;
+	position: relative;
 	.container{
 		max-width:1020px;
 	}
@@ -290,6 +373,7 @@ html{
 	color: #7A797A;
 }
 .vasesPots__item__text {
+	padding: 24px 50px 0;
 	font-family: 'Mukta Vaani';
 	font-style: normal;
 	font-weight: 400;
@@ -307,10 +391,45 @@ html{
 .vasesPots__list{
 	display: flex;
 	gap:10px;
+	width: 2916px;
 }
-
+.vasesPots__gallery-btn{
+	transition: all 0.3s ease 0s;
+	position: relative;
+	top:100px;
+	left:50%;
+	width:431px;
+	height:91px;
+	font-family: "Koulen";
+	font-weight: 400;
+	font-size: 36px;
+	line-height: 91px;
+	letter-spacing: 8px;
+	display: block;
+	border:3px solid #979797;
+	padding:0px 47px;
+	color:#979797;
+	text-align:center;
+	&:hover{
+		color:#000;
+		border-color: #000;
+	}
+}
 
 //footer
 .footer {
+	margin: 60px 0 0 0;
 	flex: 0 0 auto;
+	height:200px;
+	position: relative;
+	img{
+		position: absolute;
+		display: block;
+		bottom:0;
+		left:110px;
+	}
+}
+
+@media(max-width:1471px){
+
 }

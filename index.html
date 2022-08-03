@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=1300">
 	<title>Greeenco.</title>
 	<link rel="stylesheet" href="css/style.css">
 </head>
@@ -12,25 +12,42 @@
 			<div class="container">
 				<div class="header__body">
 					<div class="header__burger">
-
+						<div class="burger__item">
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+						<div class="burger__item">
+							<span></span>
+							<span id ='burgerDotCenter'></span>
+							<span></span>
+						</div>
+						<div class="burger__item">
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
 					</div>
 					<div class="header__menu">
 						<ul class="header__list">
 							<li>
-								<a href="" class="header__link">gallery</a>
+								<a href="#home" class="header__link">home</a>
 							</li>
 							<li>
-								<a href="" class="header__link">vase % pots</a>
+								<a href="#gallery" class="header__link">gallery</a>
+							</li>
+							<li>
+								<a href="#vases" class="header__link">vase & pots</a>
 							</li>
 						</ul>
 					</div>
 					<div class="header__home">
-						<a href=""><img src="img/header/home-icon.svg" alt=""></a>
+						<a href="#home"><img src="img/header/home-icon.svg" alt=""></a>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="content">
+		<div class="content"  id='home'>
 			<div class="main">
 				<div class="container">
 					<div class="main__image">
@@ -45,7 +62,7 @@
 					
 				</div>
 			</div>
-			<div class="sliderblock">
+			<div class="sliderblock" id ='gallery'>
 				<div class="sliderblock__bg">
 					<ul class="sliderblock__media">
 						<li class="slidernlock__media-item">
@@ -65,28 +82,28 @@
 						<div class="sliderblock__slider slider">
 							<div class="sliderblock__slider-line slider-line">
 								<div class="sliderblock__item">
-									<div class="container">
-										<div class="sliderblock__item-image">
-											<img src="img/sliderblock/image.png" alt="">
-										</div>
-										<div class="sliderblock__item-textblock">
-											<div class="sliderblock__item-title">Potted cacti</div>
-											<div class="sliderblock__item-subtitle">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam pariatur officia optio tempora ad, repellat minima fugit assumenda soluta deserunt voluptas quidem doloremque commodi odit velit iste non doloribus impedit.</div>
-											<div class="sliderblock__item-time">
-												<div class="sliderblock__item-time-passed"></div>
-											</div>
-											<a href="" class="sliderblock__gallery-btn btn">view Gallery</a>
-										</div>
-										<div class="sliderblock__next-arrow"></div>
+									
+									<div class="sliderblock__item-image">
+										<img src="img/sliderblock/image.png" alt="">
 									</div>
+									<div class="sliderblock__item-textblock">
+										<div class="sliderblock__item-title">Potted cacti</div>
+										<div class="sliderblock__item-subtitle">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam pariatur officia optio tempora ad, repellat minima fugit assumenda soluta deserunt voluptas quidem doloremque commodi odit velit iste non doloribus impedit.</div>
+										<div class="sliderblock__item-time">
+											<div class="sliderblock__item-time-passed"></div>
+										</div>
+										<a href="" class="sliderblock__gallery-btn btn">view Gallery</a>
+									</div>
+									<div class="sliderblock__next-arrow"></div>
+
 								</div>
 								<div class="sliderblock__item">
-									<div class="container">
+									<!--<div class="container">-->
 										<div class="sliderblock__item-image">
 											<img src="img/sliderblock/image02.png" alt="">
 										</div>
 										<div class="sliderblock__item-textblock">
-											<div class="sliderblock__item-title">Dand<br>elion</div>
+											<div class="sliderblock__item-title">Chamo<br>mile</div>
 											<div class="sliderblock__item-subtitle">Lorem, ipsum dolor sit amet consectetur, adipisicing elit. In sunt harum omnis numquam sequi autem explicabo velit et eligendi esse id quo rerum enim, fugiat sapiente animi impedit magni, itaque.</div>
 											<div class="sliderblock__item-time">
 												<div class="sliderblock__item-time-passed"></div>
@@ -94,10 +111,10 @@
 											<a href="" class="sliderblock__gallery-btn btn">view Gallery</a>
 										</div>
 										<div class="sliderblock__next-arrow"></div>
+										<!--</div>-->
 									</div>
-								</div>
-								<div class="sliderblock__item">
-									<div class="container">
+									<div class="sliderblock__item">
+
 										<div class="sliderblock__item-image">
 											<img src="img/sliderblock/image03.png" alt="">
 										</div>
@@ -110,71 +127,72 @@
 											<a href="" class="sliderblock__gallery-btn btn">view gallery</a>
 										</div>
 										<div class="sliderblock__next-arrow"></div>
+
 									</div>
 								</div>
-								<!--<div class="sliderblock__gallery-link">view gallery</div>-->
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-			<div class="vasesPots">
-				<div class="container">
-					<div class="vasesPots__row">
-						<div class="vasesPots__title">
-							<span>vases&pots</span>
+				<div class="vasesPots" id='vases'>
+					<div class="container">
+						<div class="vasesPots__row">
+							<div class="vasesPots__title">
+								<span>vases&pots</span>
+							</div>
+							<div class="vasesPots__slider">
+								<ul class="vasesPots__list">
+									<li class="vasesPots__item">
+										<div class="vasesPots__item-image">
+											<img src="img/vases&pots/image01.png" alt="">
+										</div>
+										<div class="vasesPots__item__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </div>
+									</li>
+									<li class="vasesPots__item">
+										<div class="vasesPots__item-image">
+											<img src="img/vases&pots/image02.png" alt="">
+										</div>
+										<div class="vasesPots__item__text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam voluptates laborum rerum excepturi facere, nihil.</div>
+									</li>
+									<li class="vasesPots__item">
+										<div class="vasesPots__item-image">
+											<img src="img/vases&pots/image02.png" alt="">
+										</div>
+										<div class="vasesPots__item__text">Lorem ipsum dolor sit, amet consectetur adipisicing, elit. Ex error nesciunt voluptates. Laborum dignissimos suscipit facilis odio, fugiat incidunt expedita!</div>
+									</li>
+									<li class="vasesPots__item">
+										<div class="vasesPots__item-image">
+											<img src="img/vases&pots/image01.png" alt="">
+										</div>
+										<div class="vasesPots__item__text">Lorem ipsum dolor sit amet consectetur adipisicing, elit. Dolorum, laboriosam at. Odio explicabo minima, recusandae cupiditate.</div>
+									</li>
+									<li class="vasesPots__item">
+										<div class="vasesPots__item-image">
+											<img src="img/vases&pots/image02.png" alt="">
+										</div>
+										<div class="vasesPots__item__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. A laudantium nostrum qui dolorum rem, sapiente. Repellat, laboriosam porro.</div>
+									</li>
+									<li class="vasesPots__item">
+										<div class="vasesPots__item-image">
+											<img src="img/vases&pots/image01.png" alt="">
+										</div>
+										<div class="vasesPots__item__text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque iste perspiciatis earum cum pariatur recusandae non exercitationem.</div>
+									</li>
+								</ul>
+							</div>
 						</div>
-						<div class="vasesPots__slider">
-							<ul class="vasesPots__list">
-								<li class="vasesPots__item">
-									<div class="vasesPots__item-image">
-										<img src="img/vases&pots/image01.png" alt="">
-									</div>
-									<div class="vasesPots__item__text">Lorem ipsum, dolor sit amet consectetur, adipisicing elit. Beatae doloribus laboriosam impedit provident eveniet quasi aliquid suscipit numquam. Odio sunt, quia facilis, vel animi nam in deleniti pariatur optio fugiat?</div>
-								</li>
-								<li class="vasesPots__item">
-									<div class="vasesPots__item-image">
-										<img src="img/vases&pots/image02.png" alt="">
-									</div>
-									<div class="vasesPots__item__text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium, necessitatibus nisi quam adipisci veniam cumque debitis suscipit soluta vitae culpa! Repellendus nostrum, odio officia? Quas, totam animi minima quaerat consequatur.</div>
-								</li>
-								<li class="vasesPots__item">
-									<div class="vasesPots__item-image">
-										<img src="img/vases&pots/image02.png" alt="">
-									</div>
-									<div class="vasesPots__item__text">Lorem ipsum, dolor sit amet consectetur, adipisicing elit. Beatae doloribus laboriosam impedit provident eveniet quasi aliquid suscipit numquam. Odio sunt, quia facilis, vel animi nam in deleniti pariatur optio fugiat?</div>
-								</li>
-								<li class="vasesPots__item">
-									<div class="vasesPots__item-image">
-										<img src="img/vases&pots/image01.png" alt="">
-									</div>
-									<div class="vasesPots__item__text">Lorem ipsum, dolor sit amet consectetur, adipisicing elit. Beatae doloribus laboriosam impedit provident eveniet quasi aliquid suscipit numquam. Odio sunt, quia facilis, vel animi nam in deleniti pariatur optio fugiat?</div>
-								</li>
-								<li class="vasesPots__item">
-									<div class="vasesPots__item-image">
-										<img src="img/vases&pots/image02.png" alt="">
-									</div>
-									<div class="vasesPots__item__text">Lorem ipsum, dolor sit amet consectetur, adipisicing elit. Beatae doloribus laboriosam impedit provident eveniet quasi aliquid suscipit numquam. Odio sunt, quia facilis, vel animi nam in deleniti pariatur optio fugiat?</div>
-								</li>
-								<li class="vasesPots__item">
-									<div class="vasesPots__item-image">
-										<img src="img/vases&pots/image01.png" alt="">
-									</div>
-									<div class="vasesPots__item__text">Lorem ipsum, dolor sit amet consectetur, adipisicing elit. Beatae doloribus laboriosam impedit provident eveniet quasi aliquid suscipit numquam. Odio sunt, quia facilis, vel animi nam in deleniti pariatur optio fugiat?</div>
-								</li>
-							</ul>
-						</div>
+						<a href="" class="vasesPots__gallery-btn btn">view gallery</a>
 					</div>
-				</div>
-			</div>
 
+				</div>
+
+			</div>
+			<div class="footer">
+				<img src="img/image-absolute-footer.png" alt="">
+			</div>
 		</div>
-		<div class="footer">
-			
-		</div>
-	</div>
-	<script src='js/script.js'>
-		
-	</script>
-</body>
-</html>
+		<script src='js/script.js'>
+
+		</script>
+	</body>
+	</html>

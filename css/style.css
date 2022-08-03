@@ -75,6 +75,10 @@ html {
   overflow-x: hidden;
 }
 
+body.lock {
+  overflow: hidden;
+}
+
 .wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -92,12 +96,17 @@ html {
 }
 
 .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   -webkit-box-flex: 0;
       -ms-flex: 0 0 auto;
           flex: 0 0 auto;
-  background: #F4F4F4;
-  padding: 72px 0 0 0;
-  height: 250px;
+  background: rgba(244, 244, 244, 0.7);
+  padding: 65px 0 0 0;
+  height: 150px;
+  z-index: 50;
 }
 
 .header__body {
@@ -110,31 +119,106 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: relative;
 }
 
 .header__burger {
-  width: 40px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  position: relative;
+  top: 0;
+  right: 20px;
+  width: 38px;
   height: 40px;
+  z-index: 50;
+}
+.header__burger .burger__item {
+  margin: 6.5px 0 0 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.header__burger .burger__item:first-child {
+  margin: 0;
+}
+.header__burger span {
+  display: block;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
   background: #000;
+}
+.header__burger.active {
+  position: fixed;
+  top: 100px;
+  left: 40%;
+}
+.header__burger.active span {
+  display: none;
+}
+.header__burger.active:before, .header__burger.active:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  background: #000;
+  width: 4px;
+  height: 100%;
+  border-radius: 9px;
+}
+.header__burger.active:before {
+  left: 16.5px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.header__burger.active:after {
+  left: 16.5px;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
 }
 
 .header__menu {
-  display: none;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 45%;
+  height: 100%;
+  background: #F0F0F0;
+  z-index: 3;
+}
+.header__menu.active {
+  left: 0;
 }
 
+.header__list {
+  padding: 120px 0 0 0;
+}
 .header__list li {
-  margin: 10px 0 0 0;
+  margin: 20px 0 0 120px;
 }
 
 .header__link {
+  -webkit-transition: all 0.1s ease 0s;
+  transition: all 0.1s ease 0s;
   color: #979797;
   font-family: "Roboto";
   letter-spacing: 1px;
   font-size: 48px;
   text-transform: uppercase;
 }
+.header__link:hover {
+  color: #000;
+}
 
 .header__home {
+  position: absolute;
+  top: 0;
+  right: 0;
   width: 52px;
   height: 39px;
 }
@@ -162,7 +246,7 @@ html {
 .main__image {
   position: absolute;
   top: 0;
-  left: 500px;
+  right: 0;
   z-index: 2;
 }
 .main__image img {
@@ -174,6 +258,11 @@ html {
   position: absolute;
   top: 240px;
   left: 0;
+}
+.main__logo img {
+  width: 80vw;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .main__title {
@@ -218,6 +307,12 @@ html {
 
 .sliderblock__item {
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 .sliderblock__item .container {
   display: -webkit-box;
@@ -233,7 +328,6 @@ html {
   height: 929px;
   -o-object-fit: cover;
      object-fit: cover;
-  aspect-ration: 640/929;
 }
 
 .sliderblock__item-textblock {
@@ -380,6 +474,10 @@ html {
           filter: invert(1);
 }
 
+.vasesPots {
+  padding: 230px 0 0 0;
+  position: relative;
+}
 .vasesPots .container {
   max-width: 1020px;
 }
@@ -411,6 +509,7 @@ html {
 }
 
 .vasesPots__item__text {
+  padding: 24px 50px 0;
   font-family: "Mukta Vaani";
   font-style: normal;
   font-weight: 400;
@@ -431,10 +530,44 @@ html {
   display: -ms-flexbox;
   display: flex;
   gap: 10px;
+  width: 2916px;
+}
+
+.vasesPots__gallery-btn {
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  position: relative;
+  top: 100px;
+  left: 50%;
+  width: 431px;
+  height: 91px;
+  font-family: "Koulen";
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 91px;
+  letter-spacing: 8px;
+  display: block;
+  border: 3px solid #979797;
+  padding: 0px 47px;
+  color: #979797;
+  text-align: center;
+}
+.vasesPots__gallery-btn:hover {
+  color: #000;
+  border-color: #000;
 }
 
 .footer {
+  margin: 60px 0 0 0;
   -webkit-box-flex: 0;
       -ms-flex: 0 0 auto;
           flex: 0 0 auto;
+  height: 200px;
+  position: relative;
+}
+.footer img {
+  position: absolute;
+  display: block;
+  bottom: 0;
+  left: 110px;
 }

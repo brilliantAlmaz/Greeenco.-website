@@ -4,17 +4,18 @@ const sliderLine  = document.querySelector('.sliderblock__slider-line');
 let container = document.querySelector('.container');
 let width;
 const timer = document.querySelectorAll('.sliderblock__item-time-passed')
-window.addEventListener('resize', init)
-
 function init(){
 	width = container.clientWidth;
-	console.log(width)
+	//console.log(width)
 	sliderLine.style.width = width * items.length + 'px';
 	items.forEach(item => {
 		item.style.width = width + 'px';
 	})
 }
 init();
+window.addEventListener('resize', init)
+
+//sliderblock slider function
 let count=items.length-1;
 function rollNextSlider(){
 	if (count < items.length-1){
@@ -34,6 +35,7 @@ function rollNextSlider(){
 		timer[count].style.width = '100%';
 	}
 }
+//animation 
 let time= 10000;
 timer.forEach(i => {
 	i.style.transition = `all ${time/1000}s linear 0s`;
@@ -44,21 +46,29 @@ let timerIdle = setInterval(rollNextSlider,time);
 
 sliderNextBtn.forEach(i => i.addEventListener('click', function(){
 	clearInterval(timerIdle);
+	timer.forEach(i => {
+		i.style.transition = `all 0s linear 0s`;
+		i.style.width='0'
+		i.style.transition = `all ${time/1000}s linear 0s`;
+	})
 	rollNextSlider();
+	timerIdle = setInterval(rollNextSlider,time);
 }))
 
+
+//vases and pots idle animtaion
 const vasesItems = document.querySelectorAll('.vasesPots__item');
 const vasesSliderLine = document.querySelector('.vasesPots__list');
 
 let sum=0;
 vasesItems.forEach(i => {
-	console.log(i)
+	//console.log(i)
 	sum= sum + i.clientWidth + 10;
-	console.log(i.clientWidth)
+	//console.log(i.clientWidth)
 })
 
-vasesSliderLine.style.width = sum + 'px';
-console.log(sum)
+//vasesSliderLine.style.width = sum + 'px';
+////console.log(sum)
 let vasesCount = 0;
 let sumWidth = 0;
 function rollingVasesIdle(){
@@ -75,14 +85,21 @@ function rollingVasesIdle(){
 		vasesSliderLine.style.transform= `translate(0px)`;
 		setTimeout(() => {vasesSliderLine.style.transition=`all ${time/1000}s linear 0s`
 			clearInterval(vasesTimer);
-
 		}, 1000);
 		vasesTimer = setInterval(rollingVasesIdle, time);
 	}
-	console.log(sumWidth);
+	////console.log(sumWidth);
 }
 rollingVasesIdle();
 vasesSliderLine.style.transition=`all ${time/1000}s linear 0s`
 var vasesTimer = setInterval(rollingVasesIdle, time);
 
-
+//menu-burgerfunction 
+const body = document.querySelector ('body');
+const burger = document.querySelector('.header__burger');
+const menu = document.querySelector ('.header__menu')
+burger.addEventListener('click', function(){
+	menu.classList.toggle('active');
+	burger.classList.toggle('active');
+	//body.style.filter = 'blur(3px)';
+})
